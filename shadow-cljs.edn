@@ -1,0 +1,16 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src"]
+
+ :dependencies
+ [[kitchen-async "0.1.0-SNAPSHOT"]
+  [com.andrewmcveigh/cljs-time "0.5.2"]
+  [cljs-http "0.1.45"]]
+
+ :builds
+ {:dev
+  {:target :node-script
+   :main example.core/main
+   :output-to "public/js"
+   :asset-path "/js"}}
+}
