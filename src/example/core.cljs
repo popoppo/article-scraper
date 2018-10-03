@@ -111,19 +111,6 @@
 
 
 (defn main [& cli-args]
-  #_(go 
-    (console.log
-     (->
-      (<! (get-target-info "https://news.finance.yahoo.co.jp/cp/stkms"
-                           "div.ymuiContainerNopad.ymuiDotLine.clearFix div.marB15.clearFix ul li.yjMt.ymuiArrow1L"))
-      first
-      (get "url")
-      clj->js
-      )))
-  #_(go (console.log
-       (clj->js
-        (<! (get-target-link "https://news.finance.yahoo.co.jp/cp/stkms?p=2&date=20180928")))))
-  
   (go
     (let [date (first cli-args) ;; yyyy-mm-dd
           holiday?-ch (holiday? date)] 
